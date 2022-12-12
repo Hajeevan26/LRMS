@@ -93,52 +93,8 @@
 			}
 			echo'</select>';
         }
-		else if ($_GET['option'] == "viewresstatus") 
-		{
-            //$f_id = $_GET['f_id'];
-			//$dep_id = $_GET['dep_id'];
-			$i_id = $_GET['i_id'];
-			$from = $_GET['from'];
-			$to = $_GET['to'];
-
-            $sql2="select *  from tbl_reservation where i_id='$i_id' and r_from>='$from' and r_to <='$to'";
-			$result2=mysqli_query($con,$sql2) or die("error in select tbl_department:".mysqli_error()); 
-			$row1=mysqli_fetch_assoc($result2);
-			$n=mysqli_num_rows($result2);
-			if($n>0){
-				
-				?>
-				
-				
-				<label class=" btn btn-default text-center active ">Reservation Not Available <br>
-					<i class="fas fa-circle fa-2x text-red"></i>
-				</label>
-				<br>
-				<hr>
-				<p style="background-color:red;">This Equipment Already Reserved within below dates</p>
-				 
-				<table class="table table-bordered table-striped">
-					<tr>
-						<th>From</th>
-						<th>To</th>
-					</tr>
-					<tr>
-						<td><?php  echo $row1['r_from']; ?></td>
-						<td><?php  echo $row1['r_to']; ?></td>
-					</tr>
-				</table>
-				<hr>
-			<i>	Try again another time slot </i>
-			<?php 
-			
-		}
-			else{ ?>
-				<label class=" btn btn-default text-center active ">Reservation Available <br>
-					<i class="fas fa-circle fa-2x text-green"></i>
-				</label>
-				
-			<?php }
-        }
+		
+       
     }
 
  ?>

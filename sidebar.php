@@ -54,27 +54,39 @@
                         <p> Department</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="index1.php?pg=instruments.php&option=view" class="nav-link">
                         <i class="nav-icon fa fa-flask"></i>
                         <p> Equipments</p>
                     </a>
-                </li> <?php } ?>
+                </li> <?php } ?> -->
                 <li class="nav-item">
+                    <a href="index1.php?pg=dutyleave.php&option=view" class="nav-link">
+                        <i class="nav-icon fa fa-calendar-check-o" aria-hidden="true"></i>
+                        <p>Duty Leave</p>
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="index1.php?pg=dutyleave.php&option=view" class="nav-link">
+                        <i class="nav-icon fa fa-calendar-check-o" aria-hidden="true"></i>
+                        <p>Over time request</p>
+                    </a>
+                </li> -->
+                <!-- <li class="nav-item">
                     <a href="index1.php?pg=reservation.php&option=view" class="nav-link">
                         <i class="nav-icon fa fa-calendar-check-o" aria-hidden="true"></i>
                         <p> Reservation</p>
                     </a>
-                </li>
+                </li> -->
                 <?php if($role_id=="R01" ||$role_id=="R02"  ){ ?>
-                <li class="nav-item">
+              <li class="nav-item">
                     <a href="index1.php?pg=reserv_confirm.php&option=view" class="nav-link">
                         <i class="nav-icon fa fa-check-square"></i>
-                        <p> Reservation Confirm</p>
+                        <p> Duty Leave Confirm</p>
                     </a>
-                </li>
+                </li> 
                 <?php 
-                if($role_id=="R01")
+                // if($role_id=="R01")
                 { ?>
                 <li class="nav-item">
                     <a href="index1.php?pg=staff.php&option=view" class="nav-link">
@@ -83,12 +95,12 @@
                         <p> Staff Management</p>
                     </a>
                 </li>
-                 <li class="nav-item">
+                 <!-- <li class="nav-item">
                     <a href="index1.php?pg=researchers.php&option=view" class="nav-link">
                         <i class="nav-icon fa fa-mortar-board"></i>
                         <p> Researchers</p>
                     </a>
-                </li> 
+                </li>  -->
                 
 
                 <?php

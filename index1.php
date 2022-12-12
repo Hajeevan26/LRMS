@@ -44,14 +44,14 @@ if(isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- select -->
- <!-- select 2 -->
-  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
-  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- select 2 -->
+    <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
-   <!-- DataTables -->
-  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 </head>
 
@@ -148,9 +148,12 @@ if(isset($_SESSION['user_id'])) {
 //
 if (isset($_GET['pg'])) 
 {
-include($_GET['pg']); }
- else {
-	include("content.php");
+include($_GET['pg']); 
+}
+
+else 
+ {
+include("content.php");
     
 }
 ?>
@@ -209,23 +212,23 @@ include($_GET['pg']); }
         <script src="dist/js/pages/dashboard.js"></script>
 
         <script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-       
-<!-- Select2 -->
-<script src="plugins/select2/js/select2.full.min.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="plugins/jszip/jszip.min.js"></script>
-<script src="plugins/pdfmake/pdfmake.min.js"></script>
-<script src="plugins/pdfmake/vfs_fonts.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-      
+
+        <!-- Select2 -->
+        <script src="plugins/select2/js/select2.full.min.js"></script>
+        <!-- DataTables  & Plugins -->
+        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+        <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+        <script src="plugins/jszip/jszip.min.js"></script>
+        <script src="plugins/pdfmake/pdfmake.min.js"></script>
+        <script src="plugins/pdfmake/vfs_fonts.js"></script>
+        <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+        <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+        <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
 
         <!-- or export -->
         <script>
@@ -319,7 +322,7 @@ include($_GET['pg']); }
             $("#dep_ide").on("click", function() {
 
                 var d_idei = $("#dep_ide").val();
-                 var txtd_id=$("#txtd_id").val();
+                var txtd_id = $("#txtd_id").val();
                 $.ajax({
                     url: "action.php",
                     type: "POST",
@@ -545,7 +548,7 @@ include($_GET['pg']); }
 
                     // $("loaddetails").load(window.location.href +" #loaddetails");
                     var x = document.getElementById('loaddetails').innerHTML;
-  document.getElementById('loaddetails').innerHTML = x;
+                    document.getElementById('loaddetails').innerHTML = x;
 
                 }
             }
@@ -560,7 +563,8 @@ include($_GET['pg']); }
             var to_date = document.getElementById("to_date").value;
             var d_id = document.getElementById("d_id").value;
             //var xmlhttp=new XMLHttpRequest();
-            var url = "repgen.php?option=reservation_report&from_date="+ from_date+"&to_date="+to_date + "&d_id=" + d_id;
+            var url = "repgen.php?option=reservation_report&from_date=" + from_date + "&to_date=" + to_date + "&d_id=" +
+                d_id;
             // var url = "repgen.php&sdate="+ from_date+"&tdate="+to_date + "&d_id=" + d_id;
             window.open(url, "_blank");
         }
@@ -585,37 +589,80 @@ include($_GET['pg']); }
         }
         </script>
 
-        
 
-<script>
-  $(function () {
-    //Initialize Select2 Elements
-    $('.select2').select2()
 
-    //Initialize Select2 Elements
-    $('.select2bs4').select2({
-      theme: 'bootstrap4'
-    })
-})
-</script>
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
+        <script>
+        $(function() {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+        })
+        </script>
+        <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+        </script>
+        <script type="text/javascript">
+        // JavaScript program to illustrate 
+        // calculation of no. of days between two date 
+
+        // To set two dates to two variables
+
+
+        //
+        function fnGetDays() {
+
+            var a = document.getElementById("from").value;
+            var b = document.getElementById("to").value;
+
+            var date1 = new Date(a);
+            var date2 = new Date(b);
+
+            var Difference_In_Time = date2.getTime() - date1.getTime();
+            var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+            if (Difference_In_Days > 0) {
+                document.getElementById("no_of_days").value = Difference_In_Days;
+                document.getElementById("btnsave").disabled = false;
+            } else {
+                document.getElementById("no_of_days").value = "Please select valid date";
+                document.getElementById("btnsave").disabled = true;
+            }
+
+
+
+        }
+        </script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#chksupp_doc").click(function () {
+            if ($(this).is(":checked")) {
+                $("#divfile_upload").show();
+            } else {
+                $("#divfile_upload").hide();
+            }
+        });
     });
-  });
 </script>
-
 </body>
 
 </html>
